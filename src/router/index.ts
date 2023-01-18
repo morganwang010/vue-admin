@@ -1,12 +1,11 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import type { App } from 'vue'
-// import { Layout, getParentLayout } from '@/utils/routerHelper'
-// import { useI18n } from '@/hooks/web/useI18n'
+import { useI18n } from '@/hooks/web/useI18n'
 
-// const { t } = useI18n()
-const Home = { template: '<div>Home</div>' }
-const About = { template: '<div>Aboutvvvvvvvvvvvv</div>' }
+const { t } = useI18n()
+// import { Layout, getParentLayout } from '@/utils/routerHelper'
+ 
 export const constantRouterMap: RouteRecordRaw[] = [
    
   {
@@ -20,7 +19,17 @@ export const constantRouterMap: RouteRecordRaw[] = [
   },
       { path: '/about', 
       component: () => import('@/views/About.vue' )
-    }
+    },
+    {
+      path: '/login',
+      component: () => import('@/views/Login/Login.vue'),
+      name: 'Login',
+      meta: {
+        hidden: true,
+        title: t('router.login'),
+        noTagsView: true
+      }
+    },
   
 ]
 
@@ -36,7 +45,7 @@ const router = createRouter({
 })
 
 
-export const setupRouter = (app: App) => {
+export const setupRouter = (app: App<Element>) => {
   app.use(router)
 }
 

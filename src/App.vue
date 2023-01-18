@@ -1,5 +1,6 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+ 
 </script>
 
 <template>
@@ -10,6 +11,10 @@ import HelloWorld from './components/HelloWorld.vue'
   </h1>
  
   <RouterLink to="/error">Login</RouterLink>
+  <el-divider >
+  <!-- <el-icon><star-filled /></el-icon> -->
+  </el-divider >
+
   <RouterLink to="/about">About</RouterLink>
   <router-view />
  

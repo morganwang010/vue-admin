@@ -7,3 +7,4 @@
 - 使用export const导出时，引用时要使用{}，而如果使用export default，import时就直接写名字就可以了，不再需要使用大括号
 - 使用vue-router还得要配合router-viewer使用，可以使用整个页面都包含在router-view当中
 - web页面的缓存使用类库web-storage-cache，用来存session的一些信息
+- 全球化使用vue-i18n的组件
